@@ -1,0 +1,20 @@
+body{
+  font-family: arial;
+  font-size:14px;
+}
+
+.adZone{
+  border:1px solid #ccc;
+  width:400px;
+  height:170px;
+}
+
+.adZone .headline{
+  font-family: arial;
+  text-align: center;
+  background-color: #0092db;
+  color:#fff;
+  border-bottom:1px solid #ccc;
+  display: block;
+  line-height: 28px;
+}

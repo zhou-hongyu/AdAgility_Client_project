@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+
+<b>Project Summary</b>
+<p>Staples has asked AdAgility to design a new ad container for their homepage that will present users with one of several credit card processing products including: Square, PayPal, Intuit, or Pay Anywhere. Eventually Staples might want to ad additional advertisers into the mix.  To work on this project you can save a copy of this page and work on it locally.</p>
+
+<b>Project Requirements:</b>
+<ul>
+	<li>Use javascript, css, html to show an ad to a user and dynamically insert it into the container provided below</li>
+	<li>Use the ads JSON object to determine the headline, line_1, and line_2 text</li>
+	<li>Include a way for the user to click the ad so they can visit the advertiser website</li>
+	<li>Use javascript / randomization to pick which ad to show (only one ad should be displayed to the user)</li>
+</ul>
+
+
+<b>Additional Ideas to Consider (extra credit):</b>
+<ul>
+	<li>Use the advertiser_weight value to increase/decrease the chances of the ad showing up.  The higher the weight the better the chance of the ad showing up.</li>
+	<li>Consider extra styles, UI/UX tweaks for the ad</li>
+	<li>Add a photo or logo thumbnail to each ad to make it more visually appealing</li>
+	<li>Can your solution handle an instance where no ads are available?  How about 10 ads in the JSON ads object?</li>
+	<li>Consider allowing users to scroll left or right to view the other ads</li>
+	<li>Consider allowing a new ad to appear every 5 seconds</li>
+</ul>
+
+
+<p>
+E-mail nick with any questions.
+</p>
+
+<div class="adZone">
+	<span class="headline">Special Offer for Staples Customers</span>
+	<div class="insertAd">
+		<!-- dynamically insert the ad here -->
+	</div>
+</div>
+
+
+<script>
+
+ads = [{
+        "advertiser_name": "Paypal",
+        "advertiser_weight": 5,
+        "headline": "Free Credit Card Reader‎ from PayPal",
+        "line_1": "Free Terminal & Setup. Fast & Easy!",
+        "line_2": "No Contract. No Hidden Fees.",
+        "clickthrough_url": "https://www.paypal.com/us/webapps/mpp/credit-card-reader"
+     }, {
+        "advertiser_name": "Square",
+        "advertiser_weight": 100,
+        "headline": "Free Credit Card Reader‎ from Square",
+        "line_1": "Just 2.7% Per Swipe",
+        "line_2": "Quick Cash and 1% Back",
+        "clickthrough_url": "http://www.squareup.com"
+     }, {
+        "advertiser_name": "Intuit",
+        "advertiser_weight": 30,
+        "headline": "Free Reader & App from Intuit",
+        "line_1": "Accept Credit Cards Anywhere",
+        "line_2": "Receive a FREE mobile card reader",
+        "clickthrough_url": "http://intuit-gopayment.com/"
+     }, {
+        "advertiser_name": "Pay Anywhere",
+        "advertiser_weight": 5,
+        "headline": "The smart way to get paid.",
+        "line_1": "Accept Credit Cards Anywhere",
+        "line_2": "Receive a FREE mobile card reader",
+        "clickthrough_url": "http://freereader.payanywhere.com/"
+     }
+];
+
+/*** all your code should go below this line ***/
+
+
+
+
+</script>
+
+</body>
+</html>
