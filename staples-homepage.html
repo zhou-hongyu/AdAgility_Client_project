@@ -44,8 +44,6 @@ E-mail nick with any questions.
 
 
 <script>
-
-
     ads = [{
             "advertiser_name": "Paypal",
             "advertiser_weight": 5,
@@ -66,14 +64,14 @@ E-mail nick with any questions.
             "headline": "Free Reader & App from Intuit",
             "line_1": "Accept Credit Cards Anywhere",
             "line_2": "Receive a FREE mobile card reader",
-            "clickthrough_url": "http://intuit-gopayment.com/"
+            "clickthrough_url": "http://intuit-gopayment.com"
          }, {
             "advertiser_name": "Pay Anywhere",
             "advertiser_weight": 5,
             "headline": "The smart way to get paid.",
             "line_1": "Accept Credit Cards Anywhere",
             "line_2": "Receive a FREE mobile card reader",
-            "clickthrough_url": "http://freereader.payanywhere.com/"
+            "clickthrough_url": "http://freereader.payanywhere.com"
          }
     ];
 
@@ -81,14 +79,14 @@ E-mail nick with any questions.
     $(document).ready(function(){
         var $add_zone = $('.adzone'),
             $insertAd = $('.insertAd'),
-            $test_text = $('<h1>Hello World</h1>');
-        debugger;
-        $insertAd.append($test_text);
+            index = Math.ceil(Math.random() * 4) - 1,
+            $advertiser_name = $('<a href=' + ads[index].clickthrough_url + '>' + (ads[index].advertiser_name) + '</a>'),
+            $headline = $('<p>' + ads[index].headline + '</p>'),
+            $line_1 = $('<p>' + ads[index].line_1 + '</p>'),
+            $line_2 = $('<p>' + ads[index].line_2 + '</p>');
+
+        $insertAd.append($advertiser_name, $headline, $line_1, $line_2);
     });
-
-
-
-
 
 </script>
 
