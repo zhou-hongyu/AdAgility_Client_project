@@ -16,7 +16,6 @@
 	<li>Consider extra styles, UI/UX tweaks for the ad</li>
 	<li>Add a photo or logo thumbnail to each ad to make it more visually appealing</li>
 	<li>Consider allowing users to scroll left or right to view the other ads</li>
-	<li>Consider allowing a new ad to appear every 5 seconds</li>
 </ul>
 
 
@@ -63,6 +62,7 @@
 
     /*** all your code should go below this line ***/
     $(document).ready(function(){
+
         var nInterval = setInterval(AdAgility.getRandomIndex, 5000);
         if (ads.length !== 0){
             AdAgility.getRandomIndex();
@@ -71,7 +71,8 @@
         }
     });
 
-    var AdAgility = AdAgility || {};
+    var AdAgility = AdAgility || {},
+        global_index = -1;
 
     AdAgility.showStaple = function(){
         var $insertAd = $('.insertAd'),
@@ -98,7 +99,13 @@
             }
         }
 
-        AdAgility.ShowByChance(index);
+        if (global_index !== index){
+            global_index = index;
+            AdAgility.ShowByChance(index);
+        } else {
+            AdAgility.getRandomIndex();
+        }
+
     };
 
     AdAgility.ShowByChance = function(index){
