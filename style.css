@@ -18,3 +18,8 @@ body{
   display: block;
   line-height: 28px;
 }
+
+.icon {
+  width: 100px;
+  height: 100px
+}

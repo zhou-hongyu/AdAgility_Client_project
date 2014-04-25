@@ -3,7 +3,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="jquery-2.1.0.min.js" type="text/javascript" charset="utf-8" ></script>
-        <!-- <script src="main.js" type="text/javascript" charset="utf-8" ></script> -->
 
     </head>
 <body>
@@ -110,7 +109,7 @@
 
     AdAgility.ShowByChance = function(index){
         var $insertAd = $('.insertAd'),
-            $advertiser_name = $('<a href=' + ads[index].clickthrough_url + '>' + (ads[index].advertiser_name) + '</a>'),
+            $advertiser_name = $('<a href=' + ads[index].clickthrough_url + '><img class="icon" src="./icons/' + ads[index].advertiser_name + '.png"></a>'),
             $headline = $('<p>' + ads[index].headline + '</p>'),
             $line_1 = $('<p>' + ads[index].line_1 + '</p>'),
             $line_2 = $('<p>' + ads[index].line_2 + '</p>');
