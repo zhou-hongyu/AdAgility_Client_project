@@ -2,6 +2,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery-2.1.0.min.js" type="text/javascript" charset="utf-8" ></script>
+        <!-- <script src="main.js" type="text/javascript" charset="utf-8" ></script> -->
+
     </head>
 <body>
 
@@ -42,38 +45,47 @@ E-mail nick with any questions.
 
 <script>
 
-ads = [{
-        "advertiser_name": "Paypal",
-        "advertiser_weight": 5,
-        "headline": "Free Credit Card Reader‎ from PayPal",
-        "line_1": "Free Terminal & Setup. Fast & Easy!",
-        "line_2": "No Contract. No Hidden Fees.",
-        "clickthrough_url": "https://www.paypal.com/us/webapps/mpp/credit-card-reader"
-     }, {
-        "advertiser_name": "Square",
-        "advertiser_weight": 100,
-        "headline": "Free Credit Card Reader‎ from Square",
-        "line_1": "Just 2.7% Per Swipe",
-        "line_2": "Quick Cash and 1% Back",
-        "clickthrough_url": "http://www.squareup.com"
-     }, {
-        "advertiser_name": "Intuit",
-        "advertiser_weight": 30,
-        "headline": "Free Reader & App from Intuit",
-        "line_1": "Accept Credit Cards Anywhere",
-        "line_2": "Receive a FREE mobile card reader",
-        "clickthrough_url": "http://intuit-gopayment.com/"
-     }, {
-        "advertiser_name": "Pay Anywhere",
-        "advertiser_weight": 5,
-        "headline": "The smart way to get paid.",
-        "line_1": "Accept Credit Cards Anywhere",
-        "line_2": "Receive a FREE mobile card reader",
-        "clickthrough_url": "http://freereader.payanywhere.com/"
-     }
-];
 
-/*** all your code should go below this line ***/
+    ads = [{
+            "advertiser_name": "Paypal",
+            "advertiser_weight": 5,
+            "headline": "Free Credit Card Reader‎ from PayPal",
+            "line_1": "Free Terminal & Setup. Fast & Easy!",
+            "line_2": "No Contract. No Hidden Fees.",
+            "clickthrough_url": "https://www.paypal.com/us/webapps/mpp/credit-card-reader"
+         }, {
+            "advertiser_name": "Square",
+            "advertiser_weight": 100,
+            "headline": "Free Credit Card Reader‎ from Square",
+            "line_1": "Just 2.7% Per Swipe",
+            "line_2": "Quick Cash and 1% Back",
+            "clickthrough_url": "http://www.squareup.com"
+         }, {
+            "advertiser_name": "Intuit",
+            "advertiser_weight": 30,
+            "headline": "Free Reader & App from Intuit",
+            "line_1": "Accept Credit Cards Anywhere",
+            "line_2": "Receive a FREE mobile card reader",
+            "clickthrough_url": "http://intuit-gopayment.com/"
+         }, {
+            "advertiser_name": "Pay Anywhere",
+            "advertiser_weight": 5,
+            "headline": "The smart way to get paid.",
+            "line_1": "Accept Credit Cards Anywhere",
+            "line_2": "Receive a FREE mobile card reader",
+            "clickthrough_url": "http://freereader.payanywhere.com/"
+         }
+    ];
+
+    /*** all your code should go below this line ***/
+    $(document).ready(function(){
+        var $add_zone = $('.adzone'),
+            $insertAd = $('.insertAd'),
+            $test_text = $('<h1>Hello World</h1>');
+        debugger;
+        $insertAd.append($test_text);
+    });
+
 
 
 
