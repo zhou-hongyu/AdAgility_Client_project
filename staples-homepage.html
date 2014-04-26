@@ -1,8 +1,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="jquery-2.1.0.min.js" type="text/javascript" charset="utf-8" ></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     </head>
 <body>
@@ -13,7 +14,6 @@
 <b>Additional Ideas to Consider (extra credit):</b>
 <ul>
 	<li>Consider extra styles, UI/UX tweaks for the ad</li>
-	<li>Add a photo or logo thumbnail to each ad to make it more visually appealing</li>
 	<li>Consider allowing users to scroll left or right to view the other ads</li>
 </ul>
 
@@ -109,12 +109,17 @@
 
     AdAgility.ShowByChance = function(index){
         var $insertAd = $('.insertAd'),
-            $advertiser_name = $('<a href=' + ads[index].clickthrough_url + '><img class="icon" src="./icons/' + ads[index].advertiser_name + '.png"></a>'),
+            $icon_div = $('<div class="col-md-1 advertiser">'),
+            $content_div = $('<div class="col-md-8 content">'),
+
+            $advertiser = $('<a href=' + ads[index].clickthrough_url + '><img class="icon" src="./icons/' + ads[index].advertiser_name + '.png"></a>'),
             $headline = $('<p>' + ads[index].headline + '</p>'),
             $line_1 = $('<p>' + ads[index].line_1 + '</p>'),
             $line_2 = $('<p>' + ads[index].line_2 + '</p>');
         $insertAd.text("");
-        $insertAd.append($advertiser_name, $headline, $line_1, $line_2);
+        $icon_div.append($advertiser);
+        $content_div.append($headline, $line_1, $line_2);
+        $insertAd.append($icon_div, $content_div);
     };
 
 </script>
