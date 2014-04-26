@@ -61,15 +61,27 @@
 
     /*** all your code should go below this line ***/
     $(document).ready(function(){
-        var nInterval = setInterval(AdAgility.getRandomIndex(), 5000);
+        if (ads.length !== 0){
+            AdAgility.getRandomIndex();
+        } else {
+            AdAgility.showStaple();
+        }
+        var nInterval = setInterval(AdAgility.getRandomIndex, 5000);
 
-        // AdAgility.slideShow();
+        var $insertAd = $('.insertAd');
+
+        $insertAd.mouseenter(function() {
+            AdAgility.slideShow(nInterval);
+        });
     });
 
     var AdAgility = AdAgility || {},
         global_index = -1;
 
-    AdAgility.slideShow = function(){
+    AdAgility.slideShow = function(nInterval){
+        var $insertAd = $('.insertAd');
+        $insertAd.text("");
+        clearInterval(nInterval);
         for(i = 0; i < ads.length; i++){
             var $insertAd = $('.insertAd'),
                 $ad_wrap = $('<div class="ad-wrap">'),
