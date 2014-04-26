@@ -9,10 +9,11 @@ body{
   height:170px;
   margin-left: 400px;
   margin-top: 100px;
-  background-color: #ecf0f1;
+  background-color: white;
 }
 
 .adZone .headline{
+  font-size: 13px;
   font-family: arial;
   text-align: center;
   background-color: #0092db;
@@ -34,6 +35,6 @@ body{
   margin-top: 20px;
 }
 
-.content p{
+.line-1 .line-2{
   font-family:Lucida Sans Unicode;
 }
