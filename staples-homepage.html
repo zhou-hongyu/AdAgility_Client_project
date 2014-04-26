@@ -12,12 +12,6 @@
 <b>Project Summary</b>
 <p>Staples has asked AdAgility to design a new ad container for their homepage that will present users with one of several credit card processing products including: Square, PayPal, Intuit, or Pay Anywhere. Eventually Staples might want to ad additional advertisers into the mix.  To work on this project you can save a copy of this page and work on it locally.</p>
 
-<b>Additional Ideas to Consider (extra credit):</b>
-<ul>
-	<li>Consider allowing users to scroll left or right to view the other ads</li>
-</ul>
-
-
 
 <div class="adZone">
 	<span class="headline">Special Offer for Staples Customers</span>
@@ -66,11 +60,9 @@
         } else {
             AdAgility.showStaple();
         }
-        var nInterval = setInterval(AdAgility.getRandomIndex, 5000);
-
-        var $insertAd = $('.insertAd');
-
-        $insertAd.mouseenter(function() {
+        var nInterval = setInterval(AdAgility.getRandomIndex, 5000),
+            $insertAd = $('.insertAd');
+        $insertAd.mouseover(function(event) {
             AdAgility.slideShow(nInterval);
         });
     });
@@ -82,9 +74,9 @@
         var $insertAd = $('.insertAd');
         $insertAd.text("");
         clearInterval(nInterval);
+
         for(i = 0; i < ads.length; i++){
-            var $insertAd = $('.insertAd'),
-                $ad_wrap = $('<div class="ad-wrap">'),
+            var $ad_wrap = $('<div class="ad-wrap">'),
                 $icon_div = $('<div class="col-md-1 advertiser">'),
                 $content_div = $('<div class="col-md-8 content">'),
                 $advertiser = $('<a href=' + ads[i].clickthrough_url + '><img class="icon" src="./icons/' + ads[i].advertiser_name + '.png"></a>'),
@@ -116,6 +108,9 @@
         });
 
         $('.adZone').scroll(function () {
+            // $insertAd.mouseout(function() {
+            //     nInterval = setInterval(AdAgility.getRandomIndex, 5000);
+            // });
             var scrollLeft = $(this).scrollLeft();
             $(".ad-wrap").each(function (i) {
                 var posLeft = $(this).position().left,
