@@ -3,6 +3,8 @@ body{
   font-size:14px;
 }
 
+
+
 .adZone{
   border:1px solid #ccc;
   width:400px;
@@ -10,10 +12,15 @@ body{
   margin-left: 400px;
   margin-top: 100px;
   background-color: white;
+  position: relative;
+  overflow-y:hidden;
+  overflow-x:scroll;
 }
 
 .adZone .headline{
-  font-size: 13px;
+  position: fixed;
+  width: 400;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   background-color: #0092db;
@@ -23,16 +30,32 @@ body{
   line-height: 28px;
 }
 
+.inserdAd {
+    position: relative;
+    height: 200px;
+    top: 0;
+    left: 0;
+}
+.ad-wrap {
+    position: absolute;
+    width: 400px;
+    height: 100%;
+}
+
 .icon {
   width: 100px;
   height: 100px;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-left: 5px;
 }
 
 .content {
   margin-left: 85px;
-  margin-top: 20px;
+  margin-top: 50px;
+}
+
+.head {
+  font-size: 13px;
 }
 
 .line-1 .line-2{
