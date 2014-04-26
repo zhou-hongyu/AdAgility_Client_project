@@ -61,6 +61,15 @@
 
     /*** all your code should go below this line ***/
     $(document).ready(function(){
+        var nInterval = setInterval(AdAgility.getRandomIndex(), 5000);
+
+        // AdAgility.slideShow();
+    });
+
+    var AdAgility = AdAgility || {},
+        global_index = -1;
+
+    AdAgility.slideShow = function(){
         for(i = 0; i < ads.length; i++){
             var $insertAd = $('.insertAd'),
                 $ad_wrap = $('<div class="ad-wrap">'),
@@ -78,7 +87,6 @@
             //     $ad_wrap.addClass('shown');
             // }
         }
-
 
         var n = $(".ad-wrap").length,
             width = 400,
@@ -98,20 +106,14 @@
         $('.adZone').scroll(function () {
             var scrollLeft = $(this).scrollLeft();
             $(".ad-wrap").each(function (i) {
-                debugger;
                 var posLeft = $(this).position().left,
                     w = $(this).width();
                 if (scrollLeft >= posLeft && scrollLeft < posLeft + w) {
-                          $(this).addClass('shown').siblings().removeClass('shown');
+                    $(".insertAd").animate({ "left": "-=400px" }, "slow" );
                 }
             });
         });
-
-        // var nInterval = setInterval(AdAgility.getRandomIndex(), 5000);
-    });
-
-    var AdAgility = AdAgility || {},
-        global_index = -1;
+    };
 
     AdAgility.showStaple = function(){
         var $insertAd = $('.insertAd'),
@@ -148,13 +150,12 @@
     };
 
     AdAgility.ShowByChance = function(index){
-        debugger;
         var $insertAd = $('.insertAd'),
             $icon_div = $('<div class="col-md-1 advertiser">'),
             $content_div = $('<div class="col-md-8 content">'),
 
             $advertiser = $('<a href=' + ads[index].clickthrough_url + '><img class="icon" src="./icons/' + ads[index].advertiser_name + '.png"></a>'),
-            $headline = $('<a class="headline" href=' + ads[index].clickthrough_url + '>' + ads[index].headline + '</a>'),
+            $headline = $('<a class="head" href=' + ads[index].clickthrough_url + '>' + ads[index].headline + '</a>'),
             $line_1 = $('<p class="line-1">' + ads[index].line_1 + '</p>'),
             $line_2 = $('<p class="line-2">' + ads[index].line_2 + '</p>');
         $insertAd.text("");

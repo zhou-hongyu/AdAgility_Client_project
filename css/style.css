@@ -31,7 +31,7 @@ body{
 }
 
 .inserdAd {
-    position: relative;
+    position: absolute;
     height: 200px;
     top: 0;
     left: 0;
